@@ -86,6 +86,8 @@ namespace Revenue_Forecast
             });
 
             //run migrations
+            //would have a try catch around this usually, but will help identify connection string being
+            //incorrect, and not being able to connect to the database.
             context.Database.Migrate();
         }
     }
