@@ -1,0 +1,41 @@
+<form #client="ngForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="clientName">Client Name</label>
+    <input required type="text" class="form-control" id="clientName" name="clientName" placeholder="Enter Client name" [(ngModel)]="clientRevenue.clientName">
+  </div>
+
+  <div class="form-group">
+    <label for="projectName">Project Name</label>
+    <input required type="text" class="form-control" id="projectName" name="projectName" placeholder="Enter Project name" [(ngModel)]="clientRevenue.projectName">
+  </div>
+
+  <div class="form-group">
+    <label for="jobNumber">Job Name</label>
+    <input required type="number" class="form-control" id="jobNumber" name="jobNumber" placeholder="Enter Project name" [(ngModel)]="clientRevenue.jobNumber">
+  </div>
+
+  <div class="form-group">
+    <label for="month">Month</label>
+    <select required class="form-control" id="month" name="month" [(ngModel)]="clientRevenue.month">
+      <option *ngFor="let month of months" [ngValue]="month.value">{{month.key}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="month">Status</label>
+    <select required class="form-control" id="status" name="status" [(ngModel)]="clientRevenue.status">
+      <option *ngFor="let status of statuses" [ngValue]="status.value">{{status.key}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="month">Net Revenue ($)</label>
+    <input required type="number" class="form-control" id="netRevenue" name="netRevenue" placeholder="Enter Project name" [(ngModel)]="clientRevenue.netRevenue">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!client.form.valid">Submit</button>
+  <a *ngIf="clientRevenue.id" class="btn btn-danger m-1" (click)="deleteClient()">Delete</a>
+  <a *ngIf="clientRevenue.id" class="btn btn-secondary m-1" [routerLink]="['/audit', clientRevenue.id]">Audit</a>
+  <span class="text-danger ml-3" *ngIf="errorMessage">{{errorMessage}}</span>
+</form>

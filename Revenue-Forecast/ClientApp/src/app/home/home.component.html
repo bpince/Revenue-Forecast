@@ -1,0 +1,40 @@
+<div>
+  <h5 class="float-left">Total Revenue: ${{getTotalRevenue()}}</h5>
+
+  <select class="form-control col-4 float-left ml-3 mb-1"
+          id="search"
+          name="search"
+          [(ngModel)]="searchField">
+    <option *ngFor="let search of searchFields" [ngValue]="search.value">{{search.key}}</option>
+  </select>
+
+  <div class="float-right">
+    <input class="float-left" type="text" placeholder="Search.." name="search" [(ngModel)]="searchTerm">
+    <a class="btn btn-secondary btn-sm mb-1 float-right" (click)="searchProjects()">Search</a>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Client Name</th>
+      <th>Job Number</th>
+      <th>Status</th>
+      <th>Month</th>
+      <th>Revenue ($)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of currentMonthlyProjects">
+      <td>{{project.projectName}}</td>
+      <td>{{project.clientName}}</td>
+      <td>{{project.jobNumber}}</td>
+      <td>{{project.statusName}}</td>
+      <td>{{project.monthName}}</td>
+      <td>${{project.netRevenue}}</td>
+    </tr>
+  </tbody>
+</table>
+

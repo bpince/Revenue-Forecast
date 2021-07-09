@@ -1,0 +1,30 @@
+<div>
+  <h1>Client Revenue's</h1>
+  <a class="btn btn-primary float-right m-1" [routerLink]="['/add']">Add Revenue</a>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Client Name</th>
+      <th>Project Name</th>
+      <th>Job Number</th>
+      <th>Month</th>
+      <th>Status</th>
+      <th>Net Revenue</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{client.clientName}}</td>
+      <td>{{client.projectName}}</td>
+      <td>{{client.jobNumber}}</td>
+      <td>{{client.monthName}}</td>
+      <td>{{client.statusName}}</td>
+      <td>${{client.netRevenue}}</td>
+      <td>
+        <a [routerLink]="['/update', client.id]">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

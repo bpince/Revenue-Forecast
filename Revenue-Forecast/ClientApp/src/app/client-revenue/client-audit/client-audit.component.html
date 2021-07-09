@@ -1,0 +1,19 @@
+<h2>Client Audit History</h2>
+<div *ngIf="!hasAnyAudits()">There are no changes to this client to view.</div>
+<table *ngIf="hasAnyAudits()" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Existing Values</th>
+      <th>Updated Values</th>
+      <th>Date Time of update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let audit of clientAudits">
+      <td>{{audit.oldValues}}</td>
+      <td>{{audit.newValues}}</td>
+      <td>{{audit.changeDateTime}}</td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-secondary m-1" [routerLink]="['/update', id]">Back to client</a>
