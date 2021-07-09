@@ -9,7 +9,7 @@
   </select>
 
   <div class="float-right">
-    <input class="float-left" type="text" placeholder="Search.." name="search" [(ngModel)]="searchTerm">
+    <input class="float-left" type="text" placeholder="Search.." name="search" (keyup.enter)="searchProjects()" [(ngModel)]="searchTerm">
     <a class="btn btn-secondary btn-sm mb-1 float-right" (click)="searchProjects()">Search</a>
   </div>
 </div>
