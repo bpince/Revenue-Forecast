@@ -42,7 +42,7 @@ Ensure you have:
 - IIS Express running
 
 
-1. Clone the repository locally
+1. Clone the repository locally/Downlad as ZIP.
 2. Open the .Sln file in Visual Studio 2019 - Revenue-Forecast.sln
 3. If you have errors for missing packages,  you will need to restore the packages you can do this by:
   - Opening Package Manager Console and running "dotnet restore"
