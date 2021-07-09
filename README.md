@@ -28,10 +28,10 @@ You will find all the angular front end pages for the application at - /clientap
 
 The backend solution has been structured in the following folders:
 
-Controllers -> Controllers
-Services -> Services
-Entity Models and DbContext -> Data
-Application Models -> Models
+- Controllers -> Controllers
+- Services -> Services
+- Entity Models and DbContext -> Data
+- Application Models -> Models
 
 ## Set up
 
