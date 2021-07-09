@@ -35,8 +35,7 @@ The backend solution has been structured in the following folders:
 
 ## Set up
 
-Prequisites:
-Ensure you have:
+Prequisites, Ensure you have:
 - Visual Studiop 2019
 - MSSQL Server
 - IIS Express running
